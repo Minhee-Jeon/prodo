@@ -1,0 +1,13 @@
+html {
+  --color-black: #090909;
+  --color-white: #FEFEFE;
+  --color-light-gray: #D9D9D9;
+  --color-medium-gray: #828282;
+  --color-dark-gray: #4E4E4E;
+  --color-coral: #FF7870;
+}
+body {
+  background-color: var(--color-white);
+  font-family: 'Pretendard', sans-serif;
+  color: var(--color-black);
+}
