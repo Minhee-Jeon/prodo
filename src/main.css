@@ -5,9 +5,38 @@ html {
   --color-medium-gray: #828282;
   --color-dark-gray: #4E4E4E;
   --color-coral: #FF7870;
+  --size-vw-desktop: 100vw;
+  --size-vh-desktop: 100vh;
+  --size-topnav-height: 130px;
+  --size-leftnav-width: 102px;
+  font-family: 'Pretendard', sans-serif;
 }
 body {
   background-color: var(--color-white);
-  font-family: 'Pretendard', sans-serif;
   color: var(--color-black);
+}
+
+#root > div {
+  display: flex;
+}
+
+.LeftNav {
+  width: var(--size-leftnav-width);
+  height: var(--size-vh-desktop);
+  background-color: #999; /* 임시 */
+}
+.contents {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+header {
+  height: var(--size-topnav-height);
+  background-color: olive; /* 임시 */
+}
+
+router-view {
+  background-color: orange; /* 임시 */
+  height: calc(var(--size-vh-desktop) - var(--size-topnav-height));
 }
