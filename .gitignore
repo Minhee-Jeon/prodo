@@ -104,3 +104,4 @@ typings/
 
 .parcel-cache
 dist
+.history
