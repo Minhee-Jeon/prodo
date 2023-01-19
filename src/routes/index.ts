@@ -1,6 +1,6 @@
 import { createRouter } from '../core/core';
-import Calander from './Calendar';
+import BigCalander from './BigCalendar';
 
 export default createRouter ([
-  { path: '#/', component: Calander },
+  { path: '#/', component: BigCalander },
 ]);
