@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "del .parcel-cache && parcel ./index.html",
-    "build": "del .parcel-cache && parcel build ./index.html"
+    "build": "del .parcel-cache && parcel build ./index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
