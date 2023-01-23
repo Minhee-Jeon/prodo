@@ -1,43 +1,67 @@
 import { Component } from '../core/core';
-import { Calendar } from '@fullcalendar/core';
+import { Calendar, CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import Interaction from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import momentPlugin from '@fullcalendar/moment';
 
 import '../../css/fullcalendar.scss'
 
 export default class BigCalendar extends Component {
+  private static DAY_NAMES = ['일','월','화','수','목','금','토'];
+  private static TIMEGRID_OPTIONS : CalendarOptions = {
+    plugins: [Interaction, dayGridPlugin, timeGridPlugin, momentPlugin],
+    headerToolbar: false,
+    editable: true,
+    initialView: 'timeGrid',
+    views: {
+      timeGrid: {
+        duration: {
+          weeks: 1
+        }
+      }
+    },
+    allDaySlot : false,
+    contentHeight:"auto",
+    dayHeaderContent: function(timeObj) {
+      return {
+        html: `<div class="calendar__day-name day_no-${timeObj.date.getDay()}">${BigCalendar.DAY_NAMES[timeObj.date.getDay()]}</div><div class="calendar__date">${timeObj.date.getDate()}</div>`
+      }
+    },
+    slotLabelFormat: "A h", // moment 있어야 문자열로 format 수정 가능, moment 없이 common 옵션 만으로는 기능에 한계가 있음
+    weekends: true,
+    events: [
+      { title: 'Meeting', start: new Date() } // 확인용 오늘 날짜 임시 더미
+    ]
+  }
+
+  private static MONTH_OPTIONS : CalendarOptions = {
+    plugins: [Interaction, dayGridPlugin],
+    headerToolbar: false,
+    editable: true,
+    initialView: 'dayGridMonth',
+    dayHeaderContent: function(timeObj) {
+      return {
+        html: `<div class="calendar__day-name">${BigCalendar.DAY_NAMES[timeObj.date.getDay()]}</div>`
+      }
+    },
+    dayCellContent: function(timeObj) {
+      const eachDate = timeObj.date.getDate().toString();
+      return ("0" + eachDate).substring(eachDate.length - 1, eachDate.length + 1);
+    },
+    events: [
+      { title: 'Meeting', start: new Date() } // 확인용 오늘 날짜 임시 더미
+    ]
+  }
+
   render() {
     this.el.classList.add('calendar');
     const calendarEl: HTMLDivElement = document.createElement('div');
     calendarEl.id = "calendar";
     this.el.append(calendarEl);
 
-    const DAY_NAMES = ['일','월','화','수','목','금','토'];
-
-    const calendar: Calendar = new Calendar(calendarEl, {
-      plugins: [Interaction, dayGridPlugin, timeGridPlugin],
-      headerToolbar: false,
-      editable: true,
-      initialView: 'timeGrid',
-      views: {
-        timeGrid: {
-          duration: {
-            weeks: 1
-          }
-        }
-      },
-      dayHeaderContent: function(arg) {
-        return {
-          html: `<div class="ci-calendar__day-name">${DAY_NAMES[arg.date.getDay()]}</div><div class="ci-calendar__day">${arg.date.getDate()}</div>`
-        }
-      },
-      weekends: true,
-      events: [
-        { title: 'Meeting', start: new Date() } // 확인용 오늘 날짜 임시 더미
-      ]
-    });
-    calendar.setOption('height', 700); // css 적용 전 임시
+    const calendar: Calendar = new Calendar(calendarEl, BigCalendar.TIMEGRID_OPTIONS);
+    // calendar.setOption('height', 700); // css 적용 전 임시
     document.addEventListener("DOMContentLoaded", function() { // calendar render는 마지막에 해야 css 적용됨
       calendar.render();
     })
