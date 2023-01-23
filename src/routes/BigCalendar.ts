@@ -4,9 +4,9 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import Interaction from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
-import '../../css/fullcalendar.css'
+import '../../css/fullcalendar.scss'
 
-export default class About extends Component {
+export default class BigCalendar extends Component {
   render() {
     this.el.classList.add('calendar');
     const calendarEl: HTMLDivElement = document.createElement('div');
