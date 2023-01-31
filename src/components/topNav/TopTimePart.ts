@@ -6,18 +6,47 @@ import WeekIndicator from './WeekIndicator';
 
 export default class TimeIndicator extends Component {
   render() {
-    const arrowBackIcon = new Icon({ iconName: 'arrowBack', size: {}, color: '#090909' }).el;
-    const arrowForwardIcon = new Icon({ iconName: 'arrowForward', size: {}, color: '#090909' }).el;
-    const arrowBackButton = new IconButton({ iconEl: arrowBackIcon }).el;
-    const arrowForwardButton = new IconButton({ iconEl: arrowForwardIcon }).el;
+    const arrowBackButton = new IconButton({ 
+      iconEl: new Icon({ 
+        iconName: 'arrowBack', 
+        size: {
+          width: '21px',
+          height: '20px'
+        }, 
+        color: '#090909'
+      }).el 
+    }).el;
+    arrowBackButton.classList.add('back');
+    const arrowForwardButton = new IconButton({ 
+      iconEl: new Icon({ 
+        iconName: 'arrowForward', 
+        size: {
+          width: '21px',
+          height: '20px'
+        }, 
+        color: '#090909' 
+      }).el 
+    }).el;
+    arrowForwardButton.classList.add('forward');
+    const iconDiv = document.createElement('div');
+    iconDiv.classList.add('icon-div');
+    iconDiv.append( 
+      arrowBackButton,
+      arrowForwardButton);
+
     const weekIndicator = new WeekIndicator().el;
     const weekDayRange = new WeekDayRange().el;
-
-    this.el.append(
-      arrowBackButton,
-      arrowForwardButton,
+    const weekViewDiv = document.createElement('div');
+    weekViewDiv.classList.add('week-view-div');
+    weekViewDiv.append(
       weekIndicator,
       weekDayRange
+    );
+
+    this.el.classList.add('top-time-part');
+    this.el.append(
+      iconDiv,
+      weekViewDiv
     );
   }
 }

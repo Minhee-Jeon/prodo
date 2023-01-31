@@ -4,6 +4,7 @@ export default class WeekDayRange extends Component {
   // TODO: curDate 상태로 변경
   render() {
     const curDate: Date = new Date();
+    this.el.classList.add('week-day-range');
     this.el.innerHTML = /* html */`
       <p>${getDaysOfWeek(curDate)}</p>
     `
@@ -42,4 +43,3 @@ function getLastDayOfWeek(curDate: Date): string {
                   : new Date(curDate.getFullYear(), curDate.getMonth()).getMonth() + 2; // 1
   return `${('0' + lastMonth).slice(-2)}.${('0' + lastDay).slice(-2)}`;
 }
-//1 월 / 2 화 / 3 수 / 4 목 / 5 금 / 6 토 / 0일

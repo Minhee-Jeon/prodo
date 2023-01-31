@@ -4,6 +4,7 @@ export default class WeekIndicator extends Component {
   // TODO: curDate 상태로 변경
   render() {
     const curDate: Date = new Date();
+    this.el.classList.add('week-indicator');
     this.el.innerHTML = /* html */`
       <p>${indicateWeek(curDate)}</p>
     `
