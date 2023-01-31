@@ -13,7 +13,7 @@ export default class Icon extends Component {
       tagName: 'span',
       props
     });
-  };
+  }
 
   render() {
     const { iconName, size, color } = this.props;
@@ -23,5 +23,5 @@ export default class Icon extends Component {
     svg.style.width = size ? size.width : DEFAULT_STYLE.width;
     svg.style.height = size ? size.height : DEFAULT_STYLE.height;
     svg.style.fill = color ? color : DEFAULT_STYLE.color;
-  };
-};
+  }
+}

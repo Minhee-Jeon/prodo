@@ -7,7 +7,7 @@ export default class MenuListItem extends Component {
             tagName: 'li',
             props
         });
-    };
+    }
 
     render() {
         const { iconName, label } = this.props;
@@ -16,5 +16,5 @@ export default class MenuListItem extends Component {
         this.el.classList.add('menu-item');
         this.el.innerHTML = `<p>${label}</p>`
         this.el.prepend(icon);
-    };
-};
+    }
+}

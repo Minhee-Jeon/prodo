@@ -13,5 +13,5 @@ export default class ButtonWrapper extends Component {
 
         this.el.classList.add('btn-wrapper');
         this.el.append(addProjectBtn, smallBtnWrapper);
-    };
-};
+    }
+}

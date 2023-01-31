@@ -13,5 +13,5 @@ export default class MenuList extends Component {
         });
 
         this.el.append(ul);
-    };
-};
+    }
+}

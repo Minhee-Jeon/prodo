@@ -6,7 +6,7 @@ export default class RedButton extends Component {
             tagName: 'button',
             props
         });
-    };
+    }
 
     render() {
         const { message, width, height, fontWeight = 'normal' } = this.props;
@@ -14,5 +14,5 @@ export default class RedButton extends Component {
         this.el.style.width = width;
         this.el.style.height = height;
         this.el.style.fontWeight = fontWeight;
-    };
-};
+    }
+}

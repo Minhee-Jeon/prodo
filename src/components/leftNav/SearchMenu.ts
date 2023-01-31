@@ -14,5 +14,5 @@ export default class SearchMenu extends Component {
       iconButton,
       search
     );
-  };
-};
+  }
+}

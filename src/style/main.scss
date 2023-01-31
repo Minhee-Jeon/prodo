@@ -77,7 +77,7 @@ router-view {
   width: var(--size-leftnav-unfold-width);
   height: var(--size-vh-desktop);
   background-color: #FFFFFF;
-  padding: 16px 15px 36px 23px;
+  padding: 16px 30px 36px 34px;
   box-sizing: border-box;
 
   .left-menu {
@@ -108,125 +108,124 @@ router-view {
       }
     }
   }
-}
 
-.icon-button {
-  padding:0;
-  border: 0;
-  background-color: white;
-}
+  .fc.fc-media-screen {
+    .fc-header-toolbar {
+      margin-bottom: 17px;
+      padding-left: 10px;
 
-.fc.fc-media-screen {
-  .fc-header-toolbar {
-    margin-bottom: 17px;
-    padding-left: 10px;
+      .fc-toolbar-title {
+        font-size: 16px;
+        color:#4E4E4E;
+      }
 
-    .fc-toolbar-title {
-      font-size: 16px;
-      color:#4E4E4E;
-    }
-
-    .fc-button-group {
-
-      .fc-button.fc-button-primary {
-        background-color: #FFFFFF;
-        border: none;
-
-        &:focus, :active {
-          box-shadow: none;
+      .fc-button-group {
+        .fc-button.fc-button-primary {
           background-color: #FFFFFF;
           border: none;
+
+          &:focus, :active {
+            box-shadow: none;
+            background-color: #FFFFFF;
+            border: none;
+          }
+
+          span {
+            font-size:17px;
+            color: #4E4E4E;
+          }
+        }
+      }
+    }
+
+    .fc-daygrid {
+      table, th, td {
+        border: none;
+      }
+
+      th {
+        background-color: #FFFFFF;
+        color:#4E4E4E;
+      }
+
+      .day-cell {
+        width: 32px;
+        height: 32px;
+
+        &.fc-day-today {
+          border-radius: 50%;
+          background-color: #FF7870;
+
+          .fc-daygrid-day-number {
+            color:#FEFEFE;
+          }
         }
 
-        span {
-          font-size:17px;
-          color: #4E4E4E;
+        .fc-daygrid-day-frame {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .fc-daygrid-day-events {
+            display: none;
+          }
         }
       }
     }
   }
 
-  .fc-daygrid {
-
-    table, th, td {
-      border: none;
-    }
-
-    th {
-      background-color: #FFFFFF;
-      color:#4E4E4E;
-    }
-
-    .day-cell {
-      width: 32px;
-      height: 32px;
-
-      &.fc-day-today {
-        border-radius: 50%;
-        background-color: #FF7870;
-
-        .fc-daygrid-day-number {
-          color:#FEFEFE;
-        }
-      }
-
-      .fc-daygrid-day-frame {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .fc-daygrid-day-events {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-.btn-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-  margin-top: 22px;
-  margin-bottom: 22px;
-
-  .small-btn-wrapper {
+  .btn-wrapper {
     display: flex;
-    justify-content: space-between;
-  }
+    flex-direction: column;
+    gap: 11px;
+    margin-top: 22px;
+    margin-bottom: 22px;
 
-  button {
-    color: #FF7870;
-    border: 1.5px solid #FF7870;
-    border-radius: 10px;
-    background-color: #FEFEFE;
-    &:hover {
-      cursor: pointer;
+    .small-btn-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      color: #FF7870;
+      border: 1.5px solid #FF7870;
+      border-radius: 10px;
+      background-color: #FEFEFE;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
-}
 
-ul {
-  border-top: 1px solid #D9D9D9;
-  border-bottom: 1px solid #D9D9D9;
-
-  .menu-item:not(:last-child) {
+  ul {
+    border-top: 1px solid #D9D9D9;
     border-bottom: 1px solid #D9D9D9;
+
+    .menu-item:not(:last-child) {
+      border-bottom: 1px solid #D9D9D9;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      height: 58px;
+      padding-left: 10px;
+      cursor: pointer;
+
+      p {
+        font-size: 20px;
+        color: #828282;
+        font-weight: 475;
+        line-height: 24px;
+      }
+    }
   }
 
-  .menu-item {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    height: 58px;
-    padding-left: 10px;
-    cursor: pointer;
-
-    p {
-      font-size: 20px;
-      color: #828282;
-      font-weight: 475;
-      line-height: 24px;
-    }
+  .icon-button {
+    padding:0;
+    border: 0;
+    background-color: white;
   }
 }

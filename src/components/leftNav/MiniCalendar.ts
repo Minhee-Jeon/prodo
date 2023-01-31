@@ -22,5 +22,5 @@ export default class MiniCalendar extends Component {
         document.addEventListener('DOMContentLoaded', function () {
             calendar.render();
         });
-    };
-};
+    }
+}
