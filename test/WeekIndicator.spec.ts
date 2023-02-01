@@ -1,4 +1,4 @@
-const indicateWeek = require("src/components/topNav/WeekIndicator.ts");
+import { indicateWeek } from "../src/components/topNav/WeekIndicator";
 
 test("test1", () => {
   expect(indicateWeek(new Date('January 24, 2023'))).toBe('2023년 1월 넷째주');

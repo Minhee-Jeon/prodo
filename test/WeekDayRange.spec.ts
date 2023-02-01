@@ -1,4 +1,4 @@
-const getDaysOfWeek = require("src/components/topNav/WeekDayRange");
+import { getDaysOfWeek } from "../src/components/topNav/WeekDayRange";
 
 test("test1", () => {
   expect(getDaysOfWeek(new Date('January 24, 2023'))).toBe('01.23 ~ 01.29');

@@ -11,8 +11,8 @@ export default class WeekIndicator extends Component {
   }
 }
 
-function indicateWeek(curDate: Date): string {
- return `${curDate.getFullYear()}년 ${curDate.getMonth()+1}월 ${month2Kor(getWeekOfMonth(curDate))}째주`;
+export function indicateWeek(curDate: Date): string {
+  return `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월 ${month2Kor(getWeekOfMonth(curDate))}째주`;
 }
 
 function getWeekOfMonth(date: Date): number {
