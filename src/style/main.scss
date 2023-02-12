@@ -152,6 +152,10 @@ router-view {
         width: 32px;
         height: 32px;
 
+        .fc-daygrid-day-number {
+          font-size: 14px;
+        }
+
         &.fc-day-today {
           border-radius: 50%;
           background-color: #FF7870;
@@ -191,6 +195,7 @@ router-view {
       border: 1.5px solid #FF7870;
       border-radius: 10px;
       background-color: #FEFEFE;
+      font-size: 13px;
 
       &:hover {
         cursor: pointer;
@@ -215,7 +220,7 @@ router-view {
       cursor: pointer;
 
       p {
-        font-size: 20px;
+        font-size: 13px;
         color: #828282;
         font-weight: 475;
         line-height: 24px;
