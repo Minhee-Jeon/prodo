@@ -29,7 +29,44 @@ body {
 
 header {
   height: var(--size-topnav-height);
-  background-color: olive; /* 임시 */
+  display: flex;
+  align-items: center;
+
+  .top-time-part {
+    display: flex;
+    margin: 34px;
+
+    .icon-div {
+      display: flex;
+      align-items: center;
+      margin-right: 34px;
+
+      .back {
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      .forward {
+        cursor: pointer;
+      }
+    }
+
+    .week-view-div {
+      .week-indicator {
+        p {
+          font-weight: 700;
+          font-size: 30px;
+          margin-bottom: 13px;
+        }
+      }
+
+      .week-day-range {
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
 
 router-view {

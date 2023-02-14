@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "del .parcel-cache && parcel ./index.html",
-    "build": "del .parcel-cache && parcel build ./index.html"
+    "build": "del .parcel-cache && parcel build ./index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "@fullcalendar/timegrid": "^5.11.3",
     "@parcel/transformer-sass": "^2.8.2",
     "@parcel/transformer-typescript-tsc": "^2.8.2",
+    "@types/jest": "^29.4.0",
     "@types/node-fetch": "^2.6.2",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
@@ -35,6 +37,7 @@
     "prettier": "^2.8.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "ts-jest": "^29.0.5",
     "typescript": "^4.9.4",
     "vercel": "^28.12.4"
   },

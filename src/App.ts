@@ -1,6 +1,6 @@
 import { Component } from './core/core';
 import LeftNav from './components/leftNav/LeftNav';
-import TopNav from './components/TopNav';
+import TopNav from './components/topNav/TopNav';
 
 export default class App extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class App extends Component {
     const contentDiv = document.createElement('div');
     contentDiv.classList.add('contents');
     contentDiv.append(
-      topNavbar,
+      topNavbar, 
       routerView);
 
     this.el.append(
