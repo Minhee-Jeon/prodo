@@ -55,9 +55,9 @@ export default class BigCalendar extends Component {
   }
 
   render() {
-    this.el.classList.add('calendar');
+    this.el.classList.add('bigCalendar');
     const calendarEl: HTMLDivElement = document.createElement('div');
-    calendarEl.id = "calendar";
+    calendarEl.id = "bigCalendar";
     this.el.append(calendarEl);
 
     const calendar: Calendar = new Calendar(calendarEl, BigCalendar.TIMEGRID_OPTIONS);

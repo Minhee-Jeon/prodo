@@ -13,7 +13,7 @@
     height : 167px;
 }
 
-.fc.fc-media-screen {
+#bigCalendar.fc.fc-media-screen {
     --color-smoke-white: #F5F5F5;
 
     // daygrid 스타일
@@ -54,7 +54,7 @@
     // timegrid 스타일
     .fc-timegrid-slot-minor {
         border-top-style: none;
-      }
+    }
     .fc-timegrid-slot-label-cushion {
         color: #BBBBBB;
         position:relative;

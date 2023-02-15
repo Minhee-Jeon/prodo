@@ -41,6 +41,11 @@ header {
       align-items: center;
       margin-right: 34px;
 
+      .icon-button {
+        border: 0;
+        background-color: transparent;
+      }
+
       .back {
         margin-right: 15px;
         cursor: pointer;
