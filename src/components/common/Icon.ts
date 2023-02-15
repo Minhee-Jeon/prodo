@@ -5,7 +5,7 @@ const DEFAULT_STYLE = {
   width: '24px',
   height: '24px',
   color: '#828282'
-}
+};
 
 export default class Icon extends Component {
   constructor(props) {
@@ -13,7 +13,8 @@ export default class Icon extends Component {
       tagName: 'span',
       props
     });
-  }
+  };
+
   render() {
     const { iconName, size, color } = this.props;
     this.el.innerHTML = icons[iconName];
@@ -22,5 +23,5 @@ export default class Icon extends Component {
     svg.style.width = size ? size.width : DEFAULT_STYLE.width;
     svg.style.height = size ? size.height : DEFAULT_STYLE.height;
     svg.style.fill = color ? color : DEFAULT_STYLE.color;
-  }
-}
+  };
+};

@@ -3,7 +3,7 @@ import Icon from '../common/Icon';
 import IconButton from '../common/IconButton';
 import Search from './Search';
 
-export default class Menu extends Component {
+export default class SearchMenu extends Component {
   render() {
     const icon = new Icon({ iconName: 'hamburgerMenu', size: { width: '33.75px', height: '29px' } }).el;
     const iconButton = new IconButton({ iconEl: icon }).el;
@@ -15,4 +15,4 @@ export default class Menu extends Component {
       search
     );
   };
-}
+};
