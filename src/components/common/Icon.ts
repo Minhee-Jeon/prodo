@@ -5,7 +5,7 @@ const DEFAULT_STYLE = {
   width: '24px',
   height: '24px',
   color: '#828282'
-}
+};
 
 export default class Icon extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ export default class Icon extends Component {
       props
     });
   }
+
   render() {
     const { iconName, size, color } = this.props;
     this.el.innerHTML = icons[iconName];
