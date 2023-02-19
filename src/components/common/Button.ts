@@ -1,9 +1,10 @@
 import { Component } from '../../core/core';
+import { BTN_COLOR } from '../../const/consts';
 
 const DEFAULT_STYLE = {
     width: '24px',
     height: '24px',
-    color: 'medium-gray'
+    color: BTN_COLOR.LIGHT_GRAY
   };
 
 export default class Button extends Component {
