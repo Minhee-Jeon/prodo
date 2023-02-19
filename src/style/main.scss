@@ -17,6 +17,39 @@ body {
   color: var(--color-black);
 }
 
+.btn {
+  border-radius: 10px;
+  background-color: #FEFEFE;
+  font-size: 13px;
+
+
+  &.coral {
+    color: var(--color-coral);
+    border: 1.5px solid var(--color-coral);
+    &:hover {
+      background-color: var(--color-coral);
+    }
+  }
+  &.light-gray {
+    color: var(--color-light-gray);
+    border: 1.5px solid var(--color-light-gray);
+    &:hover {
+      background-color: var(--color-light-gray);
+    }
+  }
+  &.medium-gray {
+    color: var(--color-medium-gray);
+    border: 1.5px solid var(--color-medium-gray);
+    &:hover {
+      background-color: var(--color-medium-gray);
+    }
+  }
+  &:hover {
+    color: var(--color-white);
+    cursor: pointer;
+  }
+}
+
 #root > div {
   display: flex;
 }
@@ -190,21 +223,13 @@ router-view {
     margin-top: 22px;
     margin-bottom: 22px;
 
+    >button {
+      font-weight:700;
+    }
+
     .small-btn-wrapper {
       display: flex;
       justify-content: space-between;
-    }
-
-    button {
-      color: #FF7870;
-      border: 1.5px solid #FF7870;
-      border-radius: 10px;
-      background-color: #FEFEFE;
-      font-size: 13px;
-
-      &:hover {
-        cursor: pointer;
-      }
     }
   }
 
