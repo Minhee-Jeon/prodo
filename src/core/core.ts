@@ -2,10 +2,10 @@
 interface ComponentPayload {
   tagName?: string;
   props?: {
-    [key: string]: unknown;
+    [key: string]: string;
   }
   state?: {
-    [key: string]: unknown;
+    [key: string]: string;
   }
 }
 

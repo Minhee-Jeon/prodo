@@ -2,7 +2,7 @@ import { Component } from "../../core/core";
 import Icon from "../common/Icon";
 
 export default class MenuListItem extends Component {
-    constructor(props) {
+    constructor(props: { [key: string]: string } ) {
         super({
             tagName: 'li',
             props
@@ -11,7 +11,7 @@ export default class MenuListItem extends Component {
 
     render() {
         const { iconName, label } = this.props;
-        const icon = new Icon({ iconName: iconName, size: { width: '19px', height: '19px' } }).el;
+        const icon = new Icon({ iconName: iconName, width: '19px', height: '19px' }).el;
 
         this.el.classList.add('menu-item');
         this.el.innerHTML = `<p>${label}</p>`
