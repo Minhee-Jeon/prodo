@@ -1,7 +1,7 @@
 import { Component } from "../../core/core";
 
 export default class RedButton extends Component {
-    constructor(props) {
+    constructor(props: { [key: string]: string } ) {
         super({
             tagName: 'button',
             props

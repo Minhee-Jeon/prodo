@@ -9,23 +9,19 @@ export default class TimeIndicator extends Component {
     const arrowBackButton = new IconButton({ 
       iconEl: new Icon({ 
         iconName: 'arrowBack', 
-        size: {
-          width: '21px',
-          height: '20px'
-        }, 
+        width: '21px',
+        height: '20px', 
         color: '#090909'
-      }).el 
+      }).el.outerHTML
     }).el;
     arrowBackButton.classList.add('back');
     const arrowForwardButton = new IconButton({ 
       iconEl: new Icon({ 
         iconName: 'arrowForward', 
-        size: {
-          width: '21px',
-          height: '20px'
-        }, 
+        width: '21px',
+        height: '20px',
         color: '#090909' 
-      }).el 
+      }).el.outerHTML
     }).el;
     arrowForwardButton.classList.add('forward');
     const iconDiv = document.createElement('div');

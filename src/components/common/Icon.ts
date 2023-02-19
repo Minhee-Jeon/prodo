@@ -8,7 +8,7 @@ const DEFAULT_STYLE = {
 };
 
 export default class Icon extends Component {
-  constructor(props) {
+  constructor(props: { [key: string]: string }) {
     super({
       tagName: 'span',
       props
@@ -16,12 +16,12 @@ export default class Icon extends Component {
   }
 
   render() {
-    const { iconName, size, color } = this.props;
+    const { iconName, width, height, color } = this.props;
     this.el.innerHTML = icons[iconName];
 
-    const svg = this.el.children[0];
-    svg.style.width = size ? size.width : DEFAULT_STYLE.width;
-    svg.style.height = size ? size.height : DEFAULT_STYLE.height;
+    const svg = this.el.children[0] as HTMLElement;
+    svg.style.width = width ? width : DEFAULT_STYLE.width;
+    svg.style.height = height ? height : DEFAULT_STYLE.height;
     svg.style.fill = color ? color : DEFAULT_STYLE.color;
   }
 }
