@@ -56,8 +56,8 @@ function routeRender(routes: Routes) {
       acc[key] = value;
       return acc;
     }, {} as Query);
-  history.replaceState(query, ''); 
-    
+  history.replaceState(query, '');
+
   // 2) 현재 라우트 정보를 찾아서 렌더링
   const currentRoute = routes.find(route => new RegExp(`${route.path}/?$`).test(hash));
   if (routerView) {

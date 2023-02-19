@@ -111,7 +111,7 @@ router-view {
   height: calc(var(--size-vh-desktop) - var(--size-topnav-height));
 }
 
-.left-nav {
+.left-nav-unfold {
   width: var(--size-leftnav-unfold-width);
   height: var(--size-vh-desktop);
   background-color: #FFFFFF;
@@ -124,6 +124,9 @@ router-view {
     justify-content: center;
     gap: 18.25px;
     margin-bottom: 37px;
+    button {
+      cursor: pointer;
+    }
 
     .left-search {
       position:relative;
@@ -262,5 +265,31 @@ router-view {
     padding:0;
     border: 0;
     background-color: white;
+  }
+}
+
+.left-nav-fold {
+  display: none;
+  min-width: 104px;
+  max-width: 104px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 34px 0px;
+  border-right: 1px solid #BBBBBB;
+
+  .mini-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px
+  }
+
+  button {
+    background-color: #FFFFFF;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
