@@ -115,8 +115,9 @@ router-view {
   width: var(--size-leftnav-unfold-width);
   height: var(--size-vh-desktop);
   background-color: #FFFFFF;
-  padding: 16px 30px 36px 34px;
+  padding: 15px 30px 37px 34px;
   box-sizing: border-box;
+  position: relative;
 
   .left-menu {
     display: flex;
@@ -124,9 +125,6 @@ router-view {
     justify-content: center;
     gap: 18.25px;
     margin-bottom: 37px;
-    button {
-      cursor: pointer;
-    }
 
     .left-search {
       position:relative;
@@ -265,6 +263,12 @@ router-view {
     padding:0;
     border: 0;
     background-color: white;
+    cursor: pointer;
+  }
+
+  > button {
+    position: absolute;
+    bottom: 37px;
   }
 }
 
@@ -274,7 +278,7 @@ router-view {
   max-width: 104px;
   flex-direction: column;
   justify-content: space-between;
-  padding: 34px 0px;
+  padding: 16px 0px 37px;
   border-right: 1px solid #BBBBBB;
 
   .mini-icon-wrapper {
@@ -287,6 +291,7 @@ router-view {
   button {
     background-color: #FFFFFF;
     border: none;
+    padding: 0;
 
     &:hover {
       cursor: pointer;
