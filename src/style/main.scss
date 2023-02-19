@@ -13,8 +13,7 @@ html {
   font-family: 'Pretendard', sans-serif;
 }
 body {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-white);  color: var(--color-black);
 }
 
 .btn {
@@ -111,12 +110,13 @@ router-view {
   height: calc(var(--size-vh-desktop) - var(--size-topnav-height));
 }
 
-.left-nav {
+.left-nav-unfold {
   width: var(--size-leftnav-unfold-width);
   height: var(--size-vh-desktop);
-  background-color: #FFFFFF;
-  padding: 16px 30px 36px 34px;
+  background-color: var(--color-white);
+  padding: 15px 30px 37px 34px;
   box-sizing: border-box;
+  position: relative;
 
   .left-menu {
     display: flex;
@@ -132,7 +132,7 @@ router-view {
         width: 175px;
         height: 34px;
         box-sizing: border-box;
-        background-color: #D9D9D9;
+        background-color: var(--color-light-gray);
         border-radius: 50px;
         padding: 3px 10px 3px 34px;
         border: none;
@@ -154,23 +154,23 @@ router-view {
 
       .fc-toolbar-title {
         font-size: 16px;
-        color:#4E4E4E;
+        color:var(--color-dark-gray);
       }
 
       .fc-button-group {
         .fc-button.fc-button-primary {
-          background-color: #FFFFFF;
+          background-color: var(--color-white);
           border: none;
 
           &:focus, :active {
             box-shadow: none;
-            background-color: #FFFFFF;
+            background-color: var(--color-white);
             border: none;
           }
 
           span {
             font-size:17px;
-            color: #4E4E4E;
+            color: var(--color-dark-gray);
           }
         }
       }
@@ -182,8 +182,8 @@ router-view {
       }
 
       th {
-        background-color: #FFFFFF;
-        color:#4E4E4E;
+        background-color: var(--color-white);
+        color:var(--color-dark-gray);
       }
 
       .day-cell {
@@ -196,10 +196,10 @@ router-view {
 
         &.fc-day-today {
           border-radius: 50%;
-          background-color: #FF7870;
+          background-color: var(--color-coral);
 
           .fc-daygrid-day-number {
-            color:#FEFEFE;
+            color:var(--color-white);
           }
         }
 
@@ -234,11 +234,11 @@ router-view {
   }
 
   ul {
-    border-top: 1px solid #D9D9D9;
-    border-bottom: 1px solid #D9D9D9;
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid var(--color-light-gray);
 
     .menu-item:not(:last-child) {
-      border-bottom: 1px solid #D9D9D9;
+      border-bottom: 1px solid var(--color-light-gray);
     }
 
     .menu-item {
@@ -251,7 +251,7 @@ router-view {
 
       p {
         font-size: 13px;
-        color: #828282;
+        color: var(--color-medium-gray);
         font-weight: 475;
         line-height: 24px;
       }
@@ -261,6 +261,39 @@ router-view {
   .icon-button {
     padding:0;
     border: 0;
-    background-color: white;
+    background-color: var(--color-white);
+    cursor: pointer;
+  }
+
+  > button {
+    position: absolute;
+    bottom: 37px;
+  }
+}
+
+.left-nav-fold {
+  display: none;
+  min-width: 104px;
+  max-width: 104px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0px 37px;
+  border-right: 1px solid var(--color-light-gray);
+
+  .mini-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px
+  }
+
+  button {
+    background-color: var(--color-white);
+    border: none;
+    padding: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
