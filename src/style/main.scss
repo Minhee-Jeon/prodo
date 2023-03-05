@@ -68,6 +68,7 @@ header {
   .top-time-part {
     display: flex;
     margin: 34px;
+    flex-grow: 1;
 
     .icon-div {
       display: flex;
@@ -105,6 +106,37 @@ header {
       }
     }
   }
+
+  .top-manipulate-part {
+    display: flex;
+
+    .viewopt-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 50px 0 40px;
+
+      p {
+        color: var(--color-medium-gray);
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 17px;
+      }
+    }
+
+    .top-operation-btn {
+      &.login-btn, &.signup-btn {
+        color: var(--color-medium-gray);
+        font-size: 18px;
+        font-weight:600;
+        margin-right: 7px;
+        &:hover{
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+
 }
 
 router-view {
