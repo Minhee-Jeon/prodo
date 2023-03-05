@@ -1,44 +1,55 @@
 @import "/node_modules/@fullcalendar/common/main.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap');
 
-@mixin setInterFont($size, $weight) { // ex) 14px, 400
-    font-family: 'Inter','Pretendard';
-    font-size : $size;
+html {
+    --calendar_cell_height : 34px;
+ }
+
+@mixin setInterFont($size, $weight) {
+    // ex) 14px, 400
+    font-family: 'Inter', 'Pretendard';
+    font-size: $size;
     font-weight: $weight;
     font-variation-settings: "slnt" 0;
     color: var(--color-dark-gray);
 }
 
+#routes_div {
+    height: 100%;
+}
+
 #calendar tr:not(.fc-col-header > *)tr:not(.fc-scrollgrid-section *) {
-    height : 167px;
+    height: 167px;
 }
 
 #bigCalendar.fc.fc-media-screen {
-    --color-smoke-white: #F5F5F5;
+    height: inherit;
 
     // daygrid 스타일
     .fc-col-header {
         height: 49.5px;
+
         .fc-col-header-cell {
             vertical-align: middle;
             @include setInterFont(14px, 400);
         }
     }
-    
+
     .fc-daygrid-day-top {
         flex-direction: row;
         margin-bottom: 10px;
     }
-    
+
     .fc-daygrid-day-number {
         padding: 20px 4px 10px 24px;
         margin-bottom: 7px;
         @include setInterFont(20px, 649);
     }
-    
+
     .fc-daygrid-body {
         .fc-day-today {
             background: none;
+
             a.fc-daygrid-day-number {
                 padding: 11px 4px 0px 9px;
                 margin: 7px 0px 8px 15px;
@@ -52,50 +63,85 @@
     }
 
     // timegrid 스타일
-    .fc-timegrid-slot-minor {
-        border-top-style: none;
-    }
-    .fc-timegrid-slot-label-cushion {
-        color: #BBBBBB;
-        position:relative;
-        top: -12px;
-    }
-    .fc-timegrid-slot-label,tr[role="row"] > :first-child {
-        border: solid var(--color-smoke-white);
-        background-color: var(--color-smoke-white);
-    }
-    .fc-timegrid-body {
-        .fc-day-today {
-            background: none;
+    .fc-timegrid {
+        .fc-timegrid-axis-frame {
+            display: none;
         }
-    }
-    .fc-col-header {
-        height: 101px;
-        .fc-day-today {
-            div.calendar__date {
-                width: 58px;
-                height: 58px;
-                background-color: var(--color-coral);
-                color: var(--color-white);
-                border-radius: 50%;
+        .fc-scrollgrid-section-body .fc-daygrid-body tr {
+            height: calc(var(--calendar_cell_height) * 2);
+
+        }
+        .fc-scrollgrid-section {
+            .fc-timegrid-divider {
+                border: none;
+                background-color: var(--color-light-gray);
+                position: relative;
             }
+        }
+
+        .fc-timegrid-slot-minor {
+            border-top-style: none;
+        }
+    
+        .fc-timegrid-slot-label-cushion {
+            color: var(--color-light-gray);
+            position: relative;
+            font-size: 14;
+            top: -18px;
+            padding: 0 15px;
+            width: 72px;
+            justify-content: space-between;
+            display: flex;
+        }
+    
+        .fc-timegrid-slot-label,
+        tr[role="row"]> :first-child {
+            border: solid var(--color-smoke-white);
+            background-color: var(--color-smoke-white);
+        }
+    
+        .fc-timegrid-body {
+            .fc-day-today {
+                background: none;
+            }
+            td {
+                height: var(--calendar_cell_height);
+            }
+        }
+    
+        .fc-col-header {
+            height: 101px;
+    
+            .fc-day-today {
+                div.calendar__date {
+                    width: 58px;
+                    height: 58px;
+                    background-color: var(--color-coral);
+                    color: var(--color-white);
+                    border-radius: 50%;
+                }
+    
+                div.calendar__day-name {
+                    color: var(--color-coral);
+                }
+            }
+    
+            .fc-col-header-cell {
+                vertical-align: top;
+            }
+    
             div.calendar__day-name {
-                color: var(--color-coral);
+                margin-top: 14px;
+                margin-bottom: 1px;
+                @include setInterFont(14px, 400);
+                color: var(--color-dark-gray);
             }
-        }
-        .fc-col-header-cell {
-            vertical-align: top;
-        }
-        div.calendar__day-name {
-            margin-top: 14px;
-            margin-bottom: 1px;
-            @include setInterFont(14px, 400);
-            color: var(--color-dark-gray);
-        }
-        div.calendar__date {
-            @include setInterFont(30px, 649);
-            padding-top: 13px;
-            color: var(--color-dark-gray);
+    
+            div.calendar__date {
+                @include setInterFont(30px, 649);
+                padding-top: 13px;
+                color: var(--color-dark-gray);
+            }
         }
     }
 }
