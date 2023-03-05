@@ -17,6 +17,10 @@ body {
   background-color: var(--color-white);  color: var(--color-black);
 }
 
+.hide {
+  display: none !important;
+}
+
 .btn {
   border-radius: 10px;
   background-color: #FEFEFE;

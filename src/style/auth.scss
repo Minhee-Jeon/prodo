@@ -1,0 +1,11 @@
+.modal {
+  display: inherit !important; // modal 모듈 나오면 지울 것
+  position: absolute;
+  width: 473;
+  height: 318px;
+  border: 1px solid black;  // 없앨것. 일단 개발 편의상 놔둠
+  background-color: var(--color-white);
+  top : var(--size-topnav-height);
+  float : right; // 아직 안먹힘
+  z-index: 9999;
+}
