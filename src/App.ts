@@ -8,6 +8,7 @@ export default class App extends Component {
     const unFoldLeftNavbar = new UnFoldLeftNav().el;
     const foldLeftNavbar = new FoldLeftNav().el;
     const topNavbar = new TopNav().el;
+    topNavbar.id = 'topNav';
     const routerView = document.createElement('router-view');
 
     const contentDiv = document.createElement('div');

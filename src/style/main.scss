@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap');
+
 html {
   --color-black: #090909;
   --color-white: #FEFEFE;
@@ -17,8 +19,17 @@ body {
   background-color: var(--color-white);  color: var(--color-black);
 }
 
+@mixin setInterFont($size, $weight) {
+  // ex) 14px, 400
+  font-family: 'Inter', 'Pretendard';
+  font-size: $size;
+  font-weight: $weight;
+  font-variation-settings: "slnt" 0;
+  color: var(--color-dark-gray);
+}
+
 .hide {
-  display: none !important;
+  display: none;
 }
 
 .btn {

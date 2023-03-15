@@ -5,8 +5,12 @@ import WeekIndicator from './WeekIndicator';
 
 export default class TopNav extends Component {
   constructor() {
+    // const props = {
+    //   id: 'topNav'
+    // };
     super({
-      tagName: 'header'
+      tagName: 'header',
+      // props: props
     });
   }
   render() {
