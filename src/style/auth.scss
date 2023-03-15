@@ -1,0 +1,95 @@
+@import "/src/style/main.scss";
+
+html {
+  --size-auto_btn : 30px;
+  --size-auth-element-width: 369px;
+}
+.modal {
+  position: absolute;
+  width: 473px;
+  background-color: var(--color-white);
+  top : var(--size-topnav-height);
+  right: 0px;
+  z-index: 100;
+
+  .auth_btn_exit {
+    width: var(--size-auto_btn);
+    height: var(--size-auto_btn);
+    float: right;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .auth_btn_exit:before, .auth_btn_exit:after {
+    right: var(--size-auto_btn);
+    position: absolute;
+    content:' ';
+    height: 25.5px;
+    width: 1px;
+    background-color: var(--color-medium-gray);
+  }
+  .auth_btn_exit:before { transform: rotate(45deg); }
+  .auth_btn_exit:after { transform: rotate(-45deg); }
+
+  .account_div {
+    position: relative;
+    width: var(--size-auth-element-width);
+    height: 160px;
+    margin-top: var(--size-auto_btn);
+    left: 46px;
+
+    label {
+      display: inline-block;
+      width: 100%;
+      height: 50%;
+      &.auth_label {
+        width: var(--size-auth-element-width);
+        display: flex;
+        flex-direction: row; /* 요소를 가로로 정렬 */
+        align-items: center; /* 요소를 수직 정렬 */
+
+        span {
+          @include setInterFont(15px, 475);
+          width: 79px;
+        }
+        input {
+          flex: 1;
+          width: 281px;
+          border: none;
+          border-bottom: 1px solid var(--color-light-gray);
+          vertical-align: top;
+          @include setInterFont(20px, 700);
+          padding: 8px 5px;
+        }
+        input:focus {
+          outline: none;
+          border-bottom: 3px solid var(--color-medium-gray);
+        }
+      }
+    }
+  }
+  .btns_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 28px;
+    button {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .auth_btn {
+      width : var(--size-auth-element-width);
+      height : 56px;
+      border: 1px solid var(--color-medium-gray);
+      border-radius: 10px;
+      background-color: transparent;
+      @include setInterFont(16px, 475);
+    }
+    .auth_btn_borderless {
+      border: none;
+      background-color: transparent;
+      @include setInterFont(13px, 475);
+      color: var(--color-medium-gray);
+    }
+  }
+}

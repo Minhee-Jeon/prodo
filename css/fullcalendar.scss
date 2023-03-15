@@ -1,18 +1,9 @@
+@import "/src/style/main.scss";
 @import "/node_modules/@fullcalendar/common/main.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap');
 
 html {
     --calendar_cell_height : 34px;
  }
-
-@mixin setInterFont($size, $weight) {
-    // ex) 14px, 400
-    font-family: 'Inter', 'Pretendard';
-    font-size: $size;
-    font-weight: $weight;
-    font-variation-settings: "slnt" 0;
-    color: var(--color-dark-gray);
-}
 
 #routes_div {
     height: 100%;
@@ -24,7 +15,7 @@ html {
 
 #bigCalendar.fc.fc-media-screen {
     height: inherit;
-
+    // background-color: var(--color-light-gray);
     // daygrid 스타일
     .fc-col-header {
         height: 49.5px;
